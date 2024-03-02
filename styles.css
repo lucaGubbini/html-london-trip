@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.gallery img {
+    width: calc(50% - 10px);
+    height: auto;
+}
+
+.gallery-image {
+    margin-right: 20px;
+    /* Adds a margin to the right of each image */
+}
+
+/* Optional: Remove margin from the last image in the gallery */
+.gallery-image:last-child {
+    margin-right: 0;
+}
+
+.expenses,
+.todo,
+.info,
+.photo-credits {
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li::before {
+    content: '• ';
+    color: black;
+    /* or any color */
+}
+
+.photo-credits {
+    text-align: left;
+}
+
+/* Responsive styling if needed */
+@media (max-width: 768px) {
+    .gallery img {
+        width: 100%;
+    }
+}
+
+ol {
+    list-style-type: none;
+    /* Remove default numbering */
+    counter-reset: item;
+    /* Create a counter */
+}
+
+ol>li {
+    display: block;
+    margin-top: 20px;
+    /* Adjust the space as needed */
+    position: relative;
+}
+
+ol>li:before {
+    counter-increment: item;
+    /* Increment the counter */
+    content: counter(item) ". ";
+    /* Display the counter with a dot and space */
+    position: absolute;
+    left: -20px;
+    /* Adjust the space for the number as needed */
+}
+
+ul.no-bullets {
+    list-style-type: none;
+    /* Remove bullets */
+    padding-left: 20px;
+    /* Adjust the indentation as needed */
+}
